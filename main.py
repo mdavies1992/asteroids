@@ -28,7 +28,6 @@ def main():
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000  # Delta time calculation
-        print(dt)
 
 if __name__ == "__main__":
     main()
