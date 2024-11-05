@@ -4,6 +4,7 @@ from circleshape import *  # If needed for CircleShape
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import *
+import sys
 
 def main():
     pygame.init()
@@ -34,6 +35,11 @@ def main():
                 return
         for sprite in updatable:
             sprite.update(dt)
+
+        for asteroid in asteroids:
+            if asteroid.collision_check(player):
+                print("Game Over!")
+                sys.exit()
 
         screen.fill((0, 0, 0))  # Proper tuple for color
 
